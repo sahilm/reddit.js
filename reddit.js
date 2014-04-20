@@ -53,7 +53,40 @@
         getJSON(redditUrl(on), res, err);
       }
     };
-  }
+  };
+
+  reddit.comments = function (article, subreddit) {
+    var on = {
+      subreddit: subreddit,
+      resource: "comments/" + article,
+      params: {}
+    };
+    return {
+      comment: function (comment) {
+        on.params.comment = comment;
+        return without(this, "comment");
+      },
+      context: function (context) {
+        on.params.context = context;
+        return without(this, "context");
+      },
+      depth: function (depth) {
+        on.params.depth = depth;
+        return without(this, "depth");
+      },
+      limit: function (limit) {
+        on.params.limit = limit;
+        return without(this, "limit");
+      },
+      sort: function (sort) {
+        on.params.sort = sort;
+        return without(this, "sort");
+      },
+      fetch: function (res, err) {
+        getJSON(redditUrl(on), res, err);
+      }
+    };
+  };
 
   var listing = function (on) {
     on.params = {};
@@ -83,6 +116,7 @@
       }
     };
   };
+
 
   var fetch = function (on) {
     return {

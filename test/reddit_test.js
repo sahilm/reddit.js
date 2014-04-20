@@ -122,5 +122,26 @@
         expect(requests[0].url).to.be.eql("http://www.reddit.com/r/pics/api/info.json?limit=25");
       });
     });
+
+    describe("comments", function () {
+      var filters = ["comment", "context", "depth", "limit", "sort"];
+      it("should be filterable", function () {
+        for (var i = 0; i < filters.length; i++) {
+          var re = reddit.comments();
+          re[filters[i]].call(re, "filter").fetch();
+          expect(requests[i].url).to.match(new RegExp(filters[i] + "=" + "filter"));
+        }
+      });
+      it("should hit the right endpoint", function () {
+        reddit.comments("23ha0a").limit(1).sort("hot").fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/comments/23ha0a.json?limit=1&sort=hot");
+      });
+      it("should take a subreddit", function () {
+        reddit.comments("23ha0a", "pics").limit(1).sort("hot").fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/pics/comments/23ha0a.json?limit=1&sort=hot");
+      });
+    });
   });
 })();
