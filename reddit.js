@@ -63,6 +63,26 @@
     return fetch(on);
   };
 
+  reddit.search = function (query, subreddit) {
+    var on = {
+      subreddit: subreddit,
+      resource: "search",
+      params: {
+        q: query
+      }
+    };
+    return withFilters(on, ["after", "before", "count", "limit", "restrict_sr", "show", "sort", "syntax", "t"]);
+  };
+
+  reddit.searchSubreddits = function (query) {
+    return listing({
+      resource: "subreddits/search",
+      params: {
+        q: query
+      }
+    });
+  };
+
   var listing = function (on) {
     return withFilters(on, ["after", "before", "count", "limit", "show"]);
   };

@@ -17,8 +17,8 @@
       xhr.restore();
     });
 
-    describe("Listing endpoints (hot & new)", function () {
-      var endpoints = ["hot", "new"];
+    describe("Listing endpoints (hot, new, searchSubreddits)", function () {
+      var endpoints = ["hot", "new", "searchSubreddits"];
       var filters = ["after", "before", "count", "limit", "show"];
 
       it("should be filterable", function () {
@@ -169,6 +169,41 @@
         reddit.subredditsByTopic("programming").fetch();
         expect(requests.length).to.be.eql(1);
         expect(requests[0].url).to.be.eql("http://www.reddit.com/api/subreddits_by_topic.json?query=programming");
+      });
+    });
+
+    describe("search", function () {
+      var filters = ["after", "before", "count", "limit", "restrict_sr", "show", "sort", "syntax", "t"];
+      it("should be filterable", function () {
+        for (var i = 0; i < filters.length; i++) {
+          var re = reddit.search("query");
+          re[filters[i]].call(re, "filter").fetch();
+          if (filters[i] === "show") {
+            expect(requests[i].url).to.match(/show\=all/);
+          } else {
+            expect(requests[i].url).to.match(new RegExp(filters[i] + "=" + "filter"));
+          }
+        }
+      });
+
+      it("should hit the right endpoint", function () {
+        reddit.search("programming").limit(1).sort("hot").fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/search.json?q=programming&limit=1&sort=hot");
+      });
+
+      it("should take a subreddit", function () {
+        reddit.search("nature", "pics").limit(1).sort("hot").fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/pics/search.json?q=nature&limit=1&sort=hot");
+      });
+    });
+
+    describe("searchSubreddits", function () {
+      it("should hit the right endpoint", function () {
+        reddit.searchSubreddits("gardening").limit(5).fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/subreddits/search.json?q=gardening&limit=5");
       });
     });
   });
