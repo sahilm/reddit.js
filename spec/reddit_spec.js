@@ -207,19 +207,27 @@
       });
     });
 
-    describe("popularSubreddits", function() {
-      it("should hit the right endpoint", function() {
+    describe("popularSubreddits", function () {
+      it("should hit the right endpoint", function () {
         reddit.popularSubreddits().limit(25).fetch();
         expect(requests.length).to.be.eql(1);
         expect(requests[0].url).to.be.eql("http://www.reddit.com/subreddits/popular.json?limit=25");
       });
     });
 
-    describe("newSubreddits", function() {
-      it("should hit the right endpoint", function() {
+    describe("newSubreddits", function () {
+      it("should hit the right endpoint", function () {
         reddit.newSubreddits().limit(25).fetch();
         expect(requests.length).to.be.eql(1);
         expect(requests[0].url).to.be.eql("http://www.reddit.com/subreddits/new.json?limit=25");
+      });
+    });
+
+    describe("aboutUser", function () {
+      it("should hit the right endpoint", function () {
+        reddit.aboutUser("chromakode").fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/user/chromakode/about.json");
       });
     });
   });

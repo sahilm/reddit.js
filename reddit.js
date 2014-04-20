@@ -95,6 +95,12 @@
     });
   };
 
+  reddit.aboutUser = function (username) {
+    return fetch({
+      resource: "user/" + username + "/about"
+    });
+  };
+
   function listing(on) {
     return withFilters(on, ["after", "before", "count", "limit", "show"]);
   }
