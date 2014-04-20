@@ -1,3 +1,10 @@
+/*!
+ * Reddit API wrapper for the browser
+ *
+ * @author Sahil Muthoo <sahil.muthoo@gmail.com>
+ * @license MIT
+ */
+
 (function (window) {
   "use strict";
   var reddit = window.reddit = {};

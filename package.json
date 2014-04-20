@@ -38,6 +38,6 @@
     ]
   },
   "scripts": {
-    "test": "testling"
+    "test": "jshint reddit.js spec/reddit_spec.js && testling"
   }
 }
