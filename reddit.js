@@ -30,6 +30,31 @@
     });
   };
 
+  reddit.info = function (subreddit) {
+    var on = {
+      subreddit: subreddit,
+      resource: "api/info",
+      params: {}
+    };
+    return {
+      id: function (id) {
+        on.params.id = id;
+        return without(this, "id");
+      },
+      limit: function (limit) {
+        on.params.limit = limit;
+        return without(this, "limit");
+      },
+      url: function (url) {
+        on.params.url = url;
+        return without(this, "url");
+      },
+      fetch: function (res, err) {
+        getJSON(redditUrl(on), res, err);
+      }
+    };
+  }
+
   var listing = function (on) {
     on.params = {};
     return {
