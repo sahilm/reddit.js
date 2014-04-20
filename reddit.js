@@ -1,7 +1,6 @@
 /*!
- * Reddit API wrapper for the browser
- *
- * @author Sahil Muthoo <sahil.muthoo@gmail.com>
+ * Reddit API wrapper for the browser (http://git.io/Mw39VQ)
+ * @author Sahil Muthoo <sahil.muthoo@gmail.com> (http://www.sahilm.com)
  * @license MIT
  */
 

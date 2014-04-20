@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Reddit API wrapper for the browser",
   "main": "reddit.js",
-  "author": "Sahil Muthoo <sahil.muthoo@gmail.com>",
+  "author": "Sahil Muthoo <sahil.muthoo@gmail.com> (http://www.sahilm.com)",
   "licenses": [
     {
       "type": "MIT",
@@ -17,7 +17,8 @@
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
-    "testling": "*"
+    "testling": "*",
+    "uglify-js": "*"
   },
   "testling": {
     "harness": "mocha-bdd",
@@ -38,6 +39,7 @@
     ]
   },
   "scripts": {
-    "test": "jshint reddit.js spec/reddit_spec.js && testling"
+    "test": "jshint reddit.js spec/reddit_spec.js && testling",
+    "minify": "uglifyjs reddit.js --compress --lint --comments --screw-ie8 --output reddit.min.js"
   }
 }
