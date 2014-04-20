@@ -48,6 +48,13 @@
       });
     });
 
+    describe("filters", function () {
+      it("should not be applicable more than once", function () {
+        var re = reddit.info().id('21234');
+        expect(re).not.to.include.keys(["id"]);
+      });
+    });
+
     describe("hot", function () {
       it("should hit the right endpoint", function () {
         reddit.hot().fetch();
