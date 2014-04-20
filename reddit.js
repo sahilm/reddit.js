@@ -33,90 +33,22 @@
   reddit.info = function (subreddit) {
     var on = {
       subreddit: subreddit,
-      resource: "api/info",
-      params: {}
+      resource: "api/info"
     };
-    return {
-      id: function (id) {
-        on.params.id = id;
-        return without(this, "id");
-      },
-      limit: function (limit) {
-        on.params.limit = limit;
-        return without(this, "limit");
-      },
-      url: function (url) {
-        on.params.url = url;
-        return without(this, "url");
-      },
-      fetch: function (res, err) {
-        getJSON(redditUrl(on), res, err);
-      }
-    };
+    return withFilters(on, ["id", "limit", "url"]);
   };
 
   reddit.comments = function (article, subreddit) {
     var on = {
       subreddit: subreddit,
-      resource: "comments/" + article,
-      params: {}
+      resource: "comments/" + article
     };
-    return {
-      comment: function (comment) {
-        on.params.comment = comment;
-        return without(this, "comment");
-      },
-      context: function (context) {
-        on.params.context = context;
-        return without(this, "context");
-      },
-      depth: function (depth) {
-        on.params.depth = depth;
-        return without(this, "depth");
-      },
-      limit: function (limit) {
-        on.params.limit = limit;
-        return without(this, "limit");
-      },
-      sort: function (sort) {
-        on.params.sort = sort;
-        return without(this, "sort");
-      },
-      fetch: function (res, err) {
-        getJSON(redditUrl(on), res, err);
-      }
-    };
+    return withFilters(on, ["comment", "context", "depth", "limit", "sort"]);
   };
 
   var listing = function (on) {
-    on.params = {};
-    return {
-      after: function (fullname) {
-        on.params.after = fullname;
-        return without(this, "after");
-      },
-      before: function (fullname) {
-        on.params.before = fullname;
-        return without(this, "before");
-      },
-      count: function (count) {
-        on.params.count = count;
-        return without(this, "count");
-      },
-      limit: function (limit) {
-        on.params.limit = limit;
-        return without(this, "limit");
-      },
-      show: function () {
-        on.params.show = "all";
-        return without(this, "show");
-      },
-      fetch: function (res, err) {
-        getJSON(redditUrl(on), res, err);
-      }
-    };
+    return withFilters(on, ["after", "before", "count", "limit", "show"]);
   };
-
 
   var fetch = function (on) {
     return {
@@ -126,8 +58,54 @@
     };
   };
 
+  function withFilters(on, filters) {
+    var ret = {};
+    on.params = on.params || {};
+
+    var without = function (object, key) {
+      var ret = {};
+      for (var prop in object) {
+        if (object.hasOwnProperty(prop) && prop !== key) {
+          ret[prop] = object[prop];
+        }
+      }
+      return ret;
+    };
+
+    var filter = function (f) {
+      if (f === "show") {
+        return function () {
+          on.params[f] = "all";
+          return without(this, f);
+        };
+      } else {
+        return function (arg) {
+          on.params[f] = arg;
+          return without(this, f);
+        };
+      }
+    };
+
+    for (var i = 0; i < filters.length; i++) {
+      ret[filters[i]] = filter(filters[i]);
+    }
+    ret.fetch = function (res, err) {
+      getJSON(redditUrl(on), res, err);
+    };
+    return ret;
+  }
+
   function redditUrl(on) {
     var url = "http://www.reddit.com/";
+    var keys = function (object) {
+      var ret = [];
+      for (var prop in object) {
+        if (object.hasOwnProperty(prop)) {
+          ret.push(prop);
+        }
+      }
+      return ret;
+    };
 
     if (on.subreddit !== undefined) {
       url += "r/" + on.subreddit + "/";
@@ -146,25 +124,6 @@
     return url;
   }
 
-  function without(object, key) {
-    var ret = {};
-    for (var prop in object) {
-      if (object.hasOwnProperty(prop) && prop !== key) {
-        ret[prop] = object[prop];
-      }
-    }
-    return ret;
-  }
-
-  function keys(object) {
-    var ret = [];
-    for (var prop in object) {
-      if (object.hasOwnProperty(prop)) {
-        ret.push(prop);
-      }
-    }
-    return ret;
-  }
 
   function getJSON(url, res, err) {
     get(url, function (data) {
