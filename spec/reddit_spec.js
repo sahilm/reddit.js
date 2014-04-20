@@ -28,15 +28,17 @@
       });
 
       it("should correctly filter", function () {
+        var counter = 0;
         for (var i = 0; i < endpoints.length; i++) {
           for (var j = 0; j < filters.length; j++) {
             var re = reddit[endpoints[i]].call(re);
             re[filters[j]].call(re, "filter").fetch();
             if (filters[j] === "show") {
-              expect(requests[j].url).to.match(/show\=all/);
+              expect(requests[counter].url).to.match(/show\=all/);
             } else {
-              expect(requests[j].url).to.match(new RegExp(filters[j] + "=" + "filter"));
+              expect(requests[counter].url).to.match(new RegExp(filters[j] + "=" + "filter"));
             }
+            counter++;
           }
         }
       });
@@ -94,16 +96,16 @@
       });
     });
 
-    describe("new", function () {
+    describe("controversial", function () {
       it("should hit the right endpoint", function () {
-        reddit.new().fetch();
+        reddit.controversial().fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/new.json");
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/controversial.json");
       });
       it("should take a subreddit and be filterable", function () {
-        reddit.new("programming").limit(5).fetch();
+        reddit.controversial("programming").limit(5).fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/new.json?limit=5");
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/controversial.json?limit=5");
       });
     });
 
