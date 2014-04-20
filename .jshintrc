@@ -28,6 +28,7 @@
     "describe": false,
     "expect": false,
     "it": false,
-    "xdescribe": false
+    "xdescribe": false,
+    "require": false
   }
 }

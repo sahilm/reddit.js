@@ -1,0 +1,29 @@
+{
+  "name": "redditjs",
+  "version": "0.0.1",
+  "description": "Reddit in the browser",
+  "main": "reddit.js",
+  "author": "Sahil Muthoo <sahil.muthoo@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "testling": "*"
+  },
+  "testling": {
+    "harness": "mocha-bdd",
+    "scripts": [
+      "spec/util/*.js",
+      "reddit.js"
+    ],
+    "files": "spec/*.js",
+    "browsers": [
+      "ie/10..latest",
+      "chrome/latest",
+      "firefox/latest"
+    ]
+  },
+  "scripts": {
+    "test": "mocha --ui tdd"
+  }
+}

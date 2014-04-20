@@ -3,7 +3,7 @@
 
   describe("Reddit", function () {
     var xhr, requests;
-    var expect = chai.expect;
+    var expect = require("chai").expect;
 
     beforeEach(function () {
       xhr = sinon.useFakeXMLHttpRequest();
