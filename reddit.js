@@ -53,6 +53,16 @@
     return withFilters(on, ["omit"]);
   };
 
+  reddit.subredditsByTopic = function (query) {
+    var on = {
+      resource: "api/subreddits_by_topic",
+      params: {
+        query: query
+      }
+    };
+    return fetch(on);
+  };
+
   var listing = function (on) {
     return withFilters(on, ["after", "before", "count", "limit", "show"]);
   };
@@ -68,6 +78,7 @@
   function withFilters(on, filters) {
     var ret = {};
     on.params = on.params || {};
+    filters = filters || [];
 
     var without = function (object, key) {
       var ret = {};

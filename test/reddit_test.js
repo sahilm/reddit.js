@@ -163,5 +163,13 @@
         expect(requests[0].url).to.be.eql("http://www.reddit.com/api/recommend/sr/programming.json?omit=leapmotion%2CCFD");
       });
     });
+
+    describe("subredditsByTopic", function () {
+      it("should hit the right endpoint", function () {
+        reddit.subredditsByTopic("programming").fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/api/subreddits_by_topic.json?query=programming");
+      });
+    });
   });
 })();
