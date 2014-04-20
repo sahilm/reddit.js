@@ -83,17 +83,29 @@
     });
   };
 
-  var listing = function (on) {
-    return withFilters(on, ["after", "before", "count", "limit", "show"]);
+  reddit.popularSubreddits = function () {
+    return listing({
+      resource: "subreddits/popular"
+    });
   };
 
-  var fetch = function (on) {
+  reddit.newSubreddits = function () {
+    return listing({
+      resource: "subreddits/new"
+    });
+  };
+
+  function listing(on) {
+    return withFilters(on, ["after", "before", "count", "limit", "show"]);
+  }
+
+  function fetch(on) {
     return {
       fetch: function (res, err) {
         getJSON(redditUrl(on), res, err);
       }
     };
-  };
+  }
 
   function withFilters(on, filters) {
     var ret = {};

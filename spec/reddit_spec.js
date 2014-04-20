@@ -206,5 +206,21 @@
         expect(requests[0].url).to.be.eql("http://www.reddit.com/subreddits/search.json?q=gardening&limit=5");
       });
     });
+
+    describe("popularSubreddits", function() {
+      it("should hit the right endpoint", function() {
+        reddit.popularSubreddits().limit(25).fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/subreddits/popular.json?limit=25");
+      });
+    });
+
+    describe("newSubreddits", function() {
+      it("should hit the right endpoint", function() {
+        reddit.newSubreddits().limit(25).fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/subreddits/new.json?limit=25");
+      });
+    });
   });
 })();
