@@ -74,7 +74,7 @@
       url += "r/" + on.subreddit + "/";
     }
     url += on.resource + ".json";
-    if (on.params !== undefined) {
+    if (keys(on.params).length > 0) {
       var qs = [];
       for (var param in on.params) {
         if (on.params.hasOwnProperty(param)) {
@@ -92,6 +92,16 @@
     for (var prop in object) {
       if (object.hasOwnProperty(prop) && prop !== key) {
         ret[prop] = object[prop];
+      }
+    }
+    return ret;
+  }
+
+  function keys(object) {
+    var ret = [];
+    for (var prop in object) {
+      if (object.hasOwnProperty(prop)) {
+        ret.push(prop);
       }
     }
     return ret;

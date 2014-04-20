@@ -1,0 +1,20 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tests</title>
+  <link rel="stylesheet" href="util/mocha.css" />
+</head>
+<body>
+<div id="mocha"></div>
+<script src="../reddit.js"></script>
+<script src="util/sinon.js"></script>
+<script src="util/mocha.js"></script>
+<script src="util/chai.js"></script>
+<script>mocha.setup('bdd')</script>
+<script src="reddit_test.js"></script>
+<script>
+  mocha.checkLeaks();
+  mocha.run();
+</script>
+</body>
+</html>
