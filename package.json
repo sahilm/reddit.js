@@ -1,10 +1,19 @@
 {
   "name": "redditjs",
   "version": "0.0.1",
-  "description": "Reddit in the browser",
+  "description": "Reddit API wrapper for the browser",
   "main": "reddit.js",
   "author": "Sahil Muthoo <sahil.muthoo@gmail.com>",
-  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/sahilm/reddit.js/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sahilm/reddit.js.git"
+  },
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
@@ -18,12 +27,12 @@
     ],
     "files": "spec/*.js",
     "browsers": [
-      "ie/10..latest",
+      "ie/latest",
       "chrome/latest",
       "firefox/latest"
     ]
   },
   "scripts": {
-    "test": "mocha --ui tdd"
+    "test": "testling"
   }
 }
