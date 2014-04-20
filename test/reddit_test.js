@@ -150,5 +150,18 @@
         expect(requests[0].url).to.be.eql("http://www.reddit.com/r/pics/comments/23ha0a.json?limit=1&sort=hot");
       });
     });
+
+    describe("recommendedSubreddits", function () {
+      it("should hit the right endpoint", function () {
+        reddit.recommendedSubreddits("programming").fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/api/recommend/sr/programming.json");
+      });
+      it("should be filterable with omits", function () {
+        reddit.recommendedSubreddits("programming").omit("leapmotion,CFD").fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/api/recommend/sr/programming.json?omit=leapmotion%2CCFD");
+      });
+    });
   });
 })();

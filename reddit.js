@@ -46,6 +46,13 @@
     return withFilters(on, ["comment", "context", "depth", "limit", "sort"]);
   };
 
+  reddit.recommendedSubreddits = function (srnames) {
+    var on = {
+      resource: "api/recommend/sr/" + srnames
+    };
+    return withFilters(on, ["omit"]);
+  };
+
   var listing = function (on) {
     return withFilters(on, ["after", "before", "count", "limit", "show"]);
   };
