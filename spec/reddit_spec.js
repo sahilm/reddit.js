@@ -17,8 +17,8 @@
       xhr.restore();
     });
 
-    describe("Listing endpoints (hot, new, searchSubreddits)", function () {
-      var endpoints = ["hot", "new", "searchSubreddits"];
+    describe("Listing endpoints (hot, new, top, controversial, searchSubreddits, popularSubreddits, newSubreddits)", function () {
+      var endpoints = ["hot", "new", "top", "controversial", "searchSubreddits", "popularSubreddits", "newSubreddits"];
       var filters = ["after", "before", "count", "limit", "show"];
 
       it("should be filterable", function () {
@@ -80,6 +80,33 @@
         expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/new.json?limit=5");
       });
     });
+
+    describe("top", function () {
+      it("should hit the right endpoint", function () {
+        reddit.top().fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/top.json");
+      });
+      it("should take a subreddit and be filterable", function () {
+        reddit.top("programming").limit(5).fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/top.json?limit=5");
+      });
+    });
+
+    describe("new", function () {
+      it("should hit the right endpoint", function () {
+        reddit.new().fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/new.json");
+      });
+      it("should take a subreddit and be filterable", function () {
+        reddit.new("programming").limit(5).fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/new.json?limit=5");
+      });
+    });
+
 
     describe("about", function () {
       it("should hit the right endpoint", function () {

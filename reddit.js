@@ -9,6 +9,20 @@
     });
   };
 
+  reddit.top = function (subreddit) {
+    return listing({
+      subreddit: subreddit,
+      resource: "top"
+    });
+  };
+
+  reddit.controversial = function (subreddit) {
+    return listing({
+      subreddit: subreddit,
+      resource: "controversial"
+    });
+  };
+
   reddit.new = function (subreddit) {
     return listing({
       subreddit: subreddit,
