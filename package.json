@@ -39,7 +39,7 @@
     ]
   },
   "scripts": {
-    "test": "jshint reddit.js spec/reddit_spec.js && testling",
+    "test": "jshint reddit.js spec/*.js && testling",
     "minify": "uglifyjs reddit.js --compress --lint --comments --screw-ie8 --output reddit.min.js"
   }
 }
