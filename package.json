@@ -1,6 +1,6 @@
 {
   "name": "reddit.js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Reddit API wrapper for the browser",
   "main": "reddit.js",
   "author": "Sahil Muthoo <sahil.muthoo@gmail.com> (http://www.sahilm.com)",
@@ -15,10 +15,11 @@
     "url": "git://github.com/sahilm/reddit.js.git"
   },
   "devDependencies": {
-    "mocha": "*",
-    "chai": "*",
-    "testling": "*",
-    "uglify-js": "*"
+    "mocha": "1.18.2",
+    "chai": "1.9.1",
+    "testling": "1.6.1",
+    "uglify-js": "2.4.13",
+    "jshint": "2.5.0"
   },
   "testling": {
     "harness": "mocha-bdd",
