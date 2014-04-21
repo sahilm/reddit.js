@@ -31,11 +31,7 @@
       "ie/latest",
       "chrome/latest",
       "firefox/latest",
-      "safari/latest",
-      "iphone/latest",
-      "ipad/latest",
-      "android-browser/latest",
-      "opera/latest"
+      "android-browser/latest"
     ]
   },
   "scripts": {
