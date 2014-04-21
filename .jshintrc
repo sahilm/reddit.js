@@ -29,6 +29,7 @@
     "expect": false,
     "it": false,
     "xdescribe": false,
-    "require": false
+    "require": false,
+    "XDomainRequest": false
   }
 }

@@ -207,7 +207,7 @@
   }
 
   function get(url, res, err) {
-    var xhr = new XMLHttpRequest();
+    var xhr = getCors();
     xhr.open("GET", url, true);
     xhr.onload = function () {
       return res(xhr.response);
@@ -218,5 +218,13 @@
       }
     };
     xhr.send();
+  }
+
+  function getCors() {
+    var xhr = new XMLHttpRequest();
+    if (!("withCredentials" in xhr)) {
+      xhr = new XDomainRequest();
+    }
+    return xhr;
   }
 })(window);
