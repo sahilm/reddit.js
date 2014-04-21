@@ -1,5 +1,11 @@
 # Reddit.js
-Reddit.js is a browser based wrapper on most of the read-only [Reddit API](http://www.reddit.com/dev/api/oauth#scope_read). It makes [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) requests to the [Reddit API](http://www.reddit.com/r/changelog/comments/1r0u3v/reddit_change_third_party_websites_can_now_make/). Thus only unauthenicated (logged-out) requests are allowed. Latest versions of Internet Explorer, Chrome, FireFox are tested via automated tests running on [Testling](https://ci.testling.com/sahilm/reddit.js). Other browsers such as Internet Explorer 9 and the Android browser are expected to work but are tested manually.
+Reddit.js is a browser based wrapper on most of the read-only [Reddit API](http://www.reddit.com/dev/api/oauth#scope_read).
+It makes [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) requests to the
+[Reddit API](http://www.reddit.com/r/changelog/comments/1r0u3v/reddit_change_third_party_websites_can_now_make/).
+Thus only unauthenicated (logged-out) requests are allowed.
+Latest versions of Internet Explorer, Chrome, FireFox are tested via automated tests running on
+[Testling](https://ci.testling.com/sahilm/reddit.js).
+Other browsers such as Internet Explorer 9 and the Android browser are expected to work but are tested manually.
 
 [![browser support](https://ci.testling.com/sahilm/reddit.js.png)
 ](https://ci.testling.com/sahilm/reddit.js)
