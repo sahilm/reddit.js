@@ -32,8 +32,7 @@
     "browsers": [
       "ie/8..latest",
       "chrome/latest",
-      "firefox/latest",
-      "android-browser/latest"
+      "firefox/latest"
     ]
   },
   "scripts": {
