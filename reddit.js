@@ -3,7 +3,6 @@
  * @author Sahil Muthoo <sahil.muthoo@gmail.com> (http://www.sahilm.com)
  * @license MIT
  */
-
 (function (window) {
   "use strict";
   var reddit = window.reddit = {};
