@@ -24,7 +24,8 @@
   "testling": {
     "harness": "mocha-bdd",
     "scripts": [
-      "spec/util/*.js",
+      "spec/util/sinon.js",
+      "spec/util/sinon-ie.js",
       "reddit.js"
     ],
     "files": "spec/*.js",

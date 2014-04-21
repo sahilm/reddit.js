@@ -28,7 +28,7 @@
     }, ["t"]);
   };
 
-  reddit.new = function (subreddit) {
+  reddit["new"] = function (subreddit) {
     return listing({
       subreddit: subreddit,
       resource: "new"
