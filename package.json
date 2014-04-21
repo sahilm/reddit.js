@@ -30,7 +30,7 @@
     ],
     "files": "spec/*.js",
     "browsers": [
-      "ie/8..latest",
+      "ie/latest",
       "chrome/latest",
       "firefox/latest"
     ]
