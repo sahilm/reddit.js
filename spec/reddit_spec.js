@@ -94,6 +94,11 @@
         expect(requests.length).to.be.eql(1);
         expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/top.json?limit=5");
       });
+      it("should be filterable by the 't' param", function() {
+        reddit.top("programming").t("week").limit(25).fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/top.json?t=week&limit=25");
+      });
     });
 
     describe("controversial", function () {
@@ -106,6 +111,11 @@
         reddit.controversial("programming").limit(5).fetch();
         expect(requests.length).to.be.eql(1);
         expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/controversial.json?limit=5");
+      });
+      it("should be filterable by the 't' param", function() {
+        reddit.controversial("programming").t("all").limit(25).fetch();
+        expect(requests.length).to.be.eql(1);
+        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/controversial.json?t=all&limit=25");
       });
     });
 

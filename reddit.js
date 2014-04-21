@@ -18,14 +18,14 @@
     return listing({
       subreddit: subreddit,
       resource: "top"
-    });
+    }, ["t"]);
   };
 
   reddit.controversial = function (subreddit) {
     return listing({
       subreddit: subreddit,
       resource: "controversial"
-    });
+    }, ["t"]);
   };
 
   reddit.new = function (subreddit) {
@@ -120,8 +120,9 @@
     });
   };
 
-  function listing(on) {
-    return withFilters(on, ["after", "before", "count", "limit", "show"]);
+  function listing(on, extras) {
+    extras = extras || [];
+    return withFilters(on, ["after", "before", "count", "limit", "show"].concat(extras));
   }
 
   function fetch(on) {
