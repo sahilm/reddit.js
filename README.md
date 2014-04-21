@@ -5,7 +5,7 @@ It makes [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) requ
 Thus only unauthenicated (logged-out) requests are allowed.
 Latest versions of Internet Explorer, Chrome, FireFox are tested via automated tests running on
 [Testling](https://ci.testling.com/sahilm/reddit.js).
-Other browsers such as Internet Explorer 9 and the Android browser are expected to work but are tested manually.
+Other browsers such as Internet Explorer 9 and the Android browser are expected to work but are tested manually. Hope you find Reddit.js useful!
 
 [![browser support](https://ci.testling.com/sahilm/reddit.js.png)
 ](https://ci.testling.com/sahilm/reddit.js)
@@ -17,7 +17,7 @@ Reddit.js is a lightweight dependency-free library which comes with minified sou
   <script src="reddit.min.js"></script>
 ```
 
-The `reddit` variable is exported which can be used to talk to the Reddit API.
+The `reddit` variable is exported which can be used to talk to the Reddit API. The `examples` directory includes usage with pure DOM API. More sophisticated examples are on the way!
 
 ```javascript
   // Fetch the 5 hottest posts on /r/awww
@@ -200,3 +200,39 @@ Fetch information about the user, including karma and gold status.
 ```javascript
   reddit.aboutUser("chromakode").fetch();
 ```
+# Contributing
+
+Pull requests are welcome. Reddit.js is built using `node` and `npm`. Once you have them installed you can run all tests with:
+```
+$ npm install
+$ npm test
+```
+
+To build the minified source
+```
+ $ npm run minify
+```
+
+# License
+
+The MIT License (MIT)
+
+Copyright (c) 2014 Sahil Muthoo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
