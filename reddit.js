@@ -3,7 +3,7 @@
  * @author Sahil Muthoo <sahil.muthoo@gmail.com> (http://www.sahilm.com)
  * @license MIT
  */
-(function (window) {
+ (function (window) {
   "use strict";
   var reddit = window.reddit = {};
 
@@ -207,7 +207,7 @@
   }
 
   function get(url, res, err) {
-    var xhr = getCors();
+    var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.onload = function () {
       return res(xhr.response);
@@ -218,13 +218,5 @@
       }
     };
     xhr.send();
-  }
-
-  function getCors() {
-    var xhr = new XMLHttpRequest();
-    if (!("withCredentials" in xhr)) {
-      xhr = new XDomainRequest();
-    }
-    return xhr;
   }
 })(window);
