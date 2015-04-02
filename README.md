@@ -6,6 +6,8 @@ Thus only unauthenicated (logged-out) requests are allowed.
 
 Latest versions of Chrome, Firefox, Internet Explorer and Safari are supported.
 
+[![npm version](https://badge.fury.io/js/reddit.js.svg)](http://badge.fury.io/js/reddit.js) [![bower version](https://badge.fury.io/bo/reddit.js.svg)](http://badge.fury.io/bo/reddit.js)
+
 # Usage
 
 Reddit.js is a lightweight dependency-free library which comes with minified source.
