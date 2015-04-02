@@ -11,7 +11,10 @@ Latest versions of Chrome, Firefox, Internet Explorer and Safari are supported.
 Reddit.js is a lightweight dependency-free library which comes with minified source.
 
 * Install via `npm install reddit.js`
-* Or download and include the minified source with a script tag.
+* Or `bower install reddit.js`
+* Or download the `reddit.min.js` file from here.
+
+Include the minfied source via `script` tag like so
 ```html
   <script src="reddit.min.js"></script>
 ```
