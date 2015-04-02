@@ -2,6 +2,12 @@
   "name": "reddit.js",
   "version": "0.1.0",
   "description": "Reddit API wrapper for the browser",
+  "keywords": [
+    "Browser",
+    "Reddit",
+    "API",
+    "CORS"
+  ],
   "main": "reddit.js",
   "author": "Sahil Muthoo <sahil.muthoo@gmail.com> (https://www.sahilm.com)",
   "licenses": [
