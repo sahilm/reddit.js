@@ -8,7 +8,7 @@
     "API",
     "CORS"
   ],
-  "main": "reddit.js",
+  "main": "reddit.min.js",
   "author": "Sahil Muthoo <sahil.muthoo@gmail.com> (https://www.sahilm.com)",
   "licenses": [
     {
