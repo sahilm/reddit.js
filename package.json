@@ -15,12 +15,12 @@
     "url": "git://github.com/sahilm/reddit.js.git"
   },
   "devDependencies": {
-    "mocha": "1.18.2",
-    "chai": "1.9.1",
-    "testling": "1.6.1",
-    "uglify-js": "2.4.13",
-    "jshint": "2.5.0",
-    "phantomjs": "*"
+    "mocha": "2.2.1",
+    "chai": "2.2.0",
+    "testling": "1.7.1",
+    "uglify-js": "2.4.19",
+    "jshint": "2.6.3",
+    "phantomjs": "1.9.16"
   },
   "testling": {
     "harness": "mocha-bdd",
