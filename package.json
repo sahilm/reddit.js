@@ -1,6 +1,6 @@
 {
   "name": "reddit.js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Reddit API wrapper for the browser",
   "keywords": [
     "Browser",
@@ -26,7 +26,8 @@
     "testling": "1.7.1",
     "uglify-js": "2.4.17",
     "jshint": "2.6.3",
-    "phantomjs": "1.9.16"
+    "phantomjs": "1.9.16",
+    "bower": "1.4.1"
   },
   "testling": {
     "harness": "mocha-bdd",
