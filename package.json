@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "description": "Reddit API wrapper for the browser",
   "main": "reddit.js",
-  "author": "Sahil Muthoo <sahil.muthoo@gmail.com> (http://www.sahilm.com)",
+  "author": "Sahil Muthoo <sahil.muthoo@gmail.com> (https://www.sahilm.com)",
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://raw.github.com/sahilm/reddit.js/master/LICENSE"
+      "url": "https://raw.githubusercontent.com/sahilm/reddit.js/master/LICENSE"
     }
   ],
   "repository": {
