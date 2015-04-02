@@ -8,7 +8,10 @@ Latest versions of Chrome, Firefox, Internet Explorer and Safari are supported.
 
 # Usage
 
-Reddit.js is a lightweight dependency-free library which comes with minified source. Include the minified source with a script tag.
+Reddit.js is a lightweight dependency-free library which comes with minified source.
+
+* Install via `npm install reddit.js`
+* Or download and include the minified source with a script tag.
 ```html
   <script src="reddit.min.js"></script>
 ```
