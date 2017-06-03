@@ -1,0 +1,10 @@
+sudo: false
+cache: npm
+language: node_js
+node_js:
+  - node
+before_install: npm i -g npm
+install:
+  - npm install
+script:
+  - npm test
