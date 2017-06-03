@@ -1,7 +1,7 @@
 {
   "name": "reddit.js",
   "main": "reddit.min.js",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "https://github.com/sahilm/reddit.js",
   "authors": [
     "Sahil Muthoo <sahil.muthoo@gmail.com> (https://www.sahilm.com)"

@@ -19,7 +19,7 @@ Reddit.js is a lightweight dependency-free library which comes with minified sou
 
 Include the minfied source via `script` tag like so
 ```html
-  <script src="//cdn.jsdelivr.net/reddit.js/0.1.3/reddit.min.js"></script>
+  <script src="//cdn.jsdelivr.net/reddit.js/0.1.4/reddit.min.js"></script>
 ```
 
 The `reddit` variable is exported which can be used to talk to the Reddit API. The `examples` directory includes usage with pure DOM API. More sophisticated examples are on the way!
