@@ -21,7 +21,6 @@
     "url": "git://github.com/sahilm/reddit.js.git"
   },
   "devDependencies": {
-    "bower": "^1.8.0",
     "chai": "^4.0.1",
     "jshint": "^2.9.4",
     "mocha": "^3.4.2",

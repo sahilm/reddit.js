@@ -6,14 +6,13 @@ Thus only unauthenicated (logged-out) requests are allowed.
 
 Latest versions of Chrome, Firefox, Internet Explorer and Safari are supported.
 
-[![npm version](https://badge.fury.io/js/reddit.js.svg)](https://badge.fury.io/js/reddit.js) [![bower version](https://badge.fury.io/bo/reddit.js.svg)](https://badge.fury.io/bo/reddit.js)
+[![npm version](https://badge.fury.io/js/reddit.js.svg)](https://badge.fury.io/js/reddit.js)
 
 # Usage
 
 Reddit.js is a lightweight dependency-free library which comes with minified source.
 
 * Install via `npm install reddit.js`
-* Or `bower install reddit.js`
 * Or include a link from the jsdelivr CDN.
 * Or download the `reddit.min.js` file from here.
 
