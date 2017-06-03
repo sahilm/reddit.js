@@ -1,3 +1,5 @@
+env:
+- DISPLAY: ":99.0"
 sudo: false
 cache: npm
 language: node_js
