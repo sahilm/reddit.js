@@ -21,13 +21,13 @@
     "url": "git://github.com/sahilm/reddit.js.git"
   },
   "devDependencies": {
-    "mocha": "2.2.1",
-    "chai": "2.2.0",
-    "testling": "1.7.1",
-    "uglify-js": "2.4.17",
-    "jshint": "2.6.3",
-    "phantomjs": "1.9.16",
-    "bower": "1.4.1"
+    "bower": "^1.8.0",
+    "chai": "^4.0.1",
+    "jshint": "^2.9.4",
+    "mocha": "^3.4.2",
+    "phantomjs-prebuilt": "^2.1.14",
+    "testling": "^1.7.1",
+    "uglify-js": "^3.0.15"
   },
   "testling": {
     "harness": "mocha-bdd",
