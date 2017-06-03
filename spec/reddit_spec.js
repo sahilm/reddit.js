@@ -46,7 +46,7 @@
       it("should be chainable", function () {
         reddit.hot().after("t3_15bfi0").limit(1).fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/hot.json?after=t3_15bfi0&limit=1");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/hot.json?after=t3_15bfi0&limit=1");
       });
     });
 
@@ -61,12 +61,12 @@
       it("should hit the right endpoint", function () {
         reddit.hot().fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/hot.json");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/hot.json");
       });
       it("should take a subreddit and be filterable", function () {
         reddit.hot("programming").limit(5).fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/hot.json?limit=5");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/r/programming/hot.json?limit=5");
       });
     });
 
@@ -74,12 +74,12 @@
       it("should hit the right endpoint", function () {
         reddit.new().fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/new.json");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/new.json");
       });
       it("should take a subreddit and be filterable", function () {
         reddit.new("programming").limit(5).fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/new.json?limit=5");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/r/programming/new.json?limit=5");
       });
     });
 
@@ -87,17 +87,17 @@
       it("should hit the right endpoint", function () {
         reddit.top().fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/top.json");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/top.json");
       });
       it("should take a subreddit and be filterable", function () {
         reddit.top("programming").limit(5).fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/top.json?limit=5");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/r/programming/top.json?limit=5");
       });
       it("should be filterable by the 't' param", function() {
         reddit.top("programming").t("week").limit(25).fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/top.json?t=week&limit=25");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/r/programming/top.json?t=week&limit=25");
       });
     });
 
@@ -105,17 +105,17 @@
       it("should hit the right endpoint", function () {
         reddit.controversial().fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/controversial.json");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/controversial.json");
       });
       it("should take a subreddit and be filterable", function () {
         reddit.controversial("programming").limit(5).fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/controversial.json?limit=5");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/r/programming/controversial.json?limit=5");
       });
       it("should be filterable by the 't' param", function() {
         reddit.controversial("programming").t("all").limit(25).fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/programming/controversial.json?t=all&limit=25");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/r/programming/controversial.json?t=all&limit=25");
       });
     });
 
@@ -124,13 +124,13 @@
       it("should hit the right endpoint", function () {
         reddit.about().fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/about.json");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/about.json");
       });
 
       it("should take a subreddit", function () {
         reddit.about("pics").fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/pics/about.json");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/r/pics/about.json");
       });
     });
 
@@ -138,13 +138,13 @@
       it("should hit the right endpoint", function () {
         reddit.random().fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/random.json");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/random.json");
       });
 
       it("should take a subreddit", function () {
         reddit.random("pics").fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/pics/random.json");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/r/pics/random.json");
       });
     });
 
@@ -158,14 +158,14 @@
         }
       });
       it("should hit the right endpoint", function () {
-        reddit.info().url("http://www.reddit.com").fetch();
+        reddit.info().url("https://www.reddit.com").fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/api/info.json?url=http%3A%2F%2Fwww.reddit.com");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/api/info.json?url=https%3A%2F%2Fwww.reddit.com");
       });
       it("should take a subreddit", function () {
         reddit.info("pics").limit(25).fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/pics/api/info.json?limit=25");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/r/pics/api/info.json?limit=25");
       });
     });
 
@@ -181,12 +181,12 @@
       it("should hit the right endpoint", function () {
         reddit.comments("23ha0a").limit(1).sort("hot").fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/comments/23ha0a.json?limit=1&sort=hot");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/comments/23ha0a.json?limit=1&sort=hot");
       });
       it("should take a subreddit", function () {
         reddit.comments("23ha0a", "pics").limit(1).sort("hot").fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/pics/comments/23ha0a.json?limit=1&sort=hot");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/r/pics/comments/23ha0a.json?limit=1&sort=hot");
       });
     });
 
@@ -194,12 +194,12 @@
       it("should hit the right endpoint", function () {
         reddit.recommendedSubreddits("programming").fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/api/recommend/sr/programming.json");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/api/recommend/sr/programming.json");
       });
       it("should be filterable with omits", function () {
         reddit.recommendedSubreddits("programming").omit("leapmotion,CFD").fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/api/recommend/sr/programming.json?omit=leapmotion%2CCFD");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/api/recommend/sr/programming.json?omit=leapmotion%2CCFD");
       });
     });
 
@@ -207,7 +207,7 @@
       it("should hit the right endpoint", function () {
         reddit.subredditsByTopic("programming").fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/api/subreddits_by_topic.json?query=programming");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/api/subreddits_by_topic.json?query=programming");
       });
     });
 
@@ -228,13 +228,13 @@
       it("should hit the right endpoint", function () {
         reddit.search("programming").limit(1).sort("hot").fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/search.json?q=programming&limit=1&sort=hot");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/search.json?q=programming&limit=1&sort=hot");
       });
 
       it("should take a subreddit", function () {
         reddit.search("nature", "pics").limit(1).sort("hot").fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/r/pics/search.json?q=nature&limit=1&sort=hot");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/r/pics/search.json?q=nature&limit=1&sort=hot");
       });
     });
 
@@ -242,7 +242,7 @@
       it("should hit the right endpoint", function () {
         reddit.searchSubreddits("gardening").limit(5).fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/subreddits/search.json?q=gardening&limit=5");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/subreddits/search.json?q=gardening&limit=5");
       });
     });
 
@@ -250,7 +250,7 @@
       it("should hit the right endpoint", function () {
         reddit.popularSubreddits().limit(25).fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/subreddits/popular.json?limit=25");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/subreddits/popular.json?limit=25");
       });
     });
 
@@ -258,7 +258,7 @@
       it("should hit the right endpoint", function () {
         reddit.newSubreddits().limit(25).fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/subreddits/new.json?limit=25");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/subreddits/new.json?limit=25");
       });
     });
 
@@ -266,7 +266,7 @@
       it("should hit the right endpoint", function () {
         reddit.aboutUser("chromakode").fetch();
         expect(requests.length).to.be.eql(1);
-        expect(requests[0].url).to.be.eql("http://www.reddit.com/user/chromakode/about.json");
+        expect(requests[0].url).to.be.eql("https://www.reddit.com/user/chromakode/about.json");
       });
     });
   });
