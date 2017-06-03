@@ -6,7 +6,7 @@ Thus only unauthenicated (logged-out) requests are allowed.
 
 Latest versions of Chrome, Firefox, Internet Explorer and Safari are supported.
 
-[![npm version](https://badge.fury.io/js/reddit.js.svg)](https://badge.fury.io/js/reddit.js)
+[![Build Status](https://travis-ci.org/sahilm/reddit.js.svg?branch=master)](https://travis-ci.org/sahilm/reddit.js) [![npm version](https://badge.fury.io/js/reddit.js.svg)](https://badge.fury.io/js/reddit.js)
 
 # Usage
 
