@@ -5,6 +5,7 @@
  */
  (function (window) {
   "use strict";
+  
   var reddit = window.reddit = {};
 
   reddit.hot = function (subreddit) {
@@ -114,10 +115,11 @@
     });
   };
 
-  reddit.aboutUser = function (username) {
-    return fetch({
-      resource: "user/" + username + "/about"
-    });
+  reddit.user = function (username, where) {
+    var on = {
+      resource: "user/" + username + ((typeof where === "undefined") ? "" : "/" + where)
+    };
+    return withFilters(on, ["show", "sort", "t", "type", "username", "after", "before", "count", "limit", "sr_detail"]);
   };
 
   function listing(on, extras) {
