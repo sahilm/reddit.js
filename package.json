@@ -25,7 +25,7 @@
     "jshint": "^2.9.5",
     "mocha": "^3.5.3",
     "phantomjs-prebuilt": "^2.1.15",
-    "testling": "^1.7.1",
+    "testling": "https://github.com/sahilm/testling/tarball/master",
     "uglify-js": "^3.1.2"
   },
   "testling": {
